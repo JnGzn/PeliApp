@@ -6,13 +6,14 @@ import { Routes, RouterModule } from '@angular/router';
 
 const routes: Routes = [
   {path: 'home', component: HomeComponent},
+  {path: '', component: HomeComponent},
   {path: 'pelicula/:id', component: PeliculaComponent},
   {path: 'buscar/:texto', component: BuscarComponent},
   {path: '**', redirectTo: 'home'},
 ];
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes)],
+  imports: [RouterModule.forRoot(routes, { useHash: true })],
   exports: [RouterModule]
 })
 export class AppRoutingModule { }
